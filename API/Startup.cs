@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Core.Interfaces;
 
 namespace API
 {
@@ -30,6 +31,7 @@ namespace API
         {
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddSwaggerGen();
 
         }
