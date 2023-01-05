@@ -3,3 +3,5 @@ bin
 appsettings.json
 *.db
 .vs
+API/skinet.db-shm
+API/skinet.db-wal
